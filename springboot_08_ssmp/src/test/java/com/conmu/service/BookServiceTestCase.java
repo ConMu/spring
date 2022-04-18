@@ -46,7 +46,7 @@ public class BookServiceTestCase {
     }
     @Test
     void testGetPage(){
-        bookService.getPage(1, 5);
+        IPage<Book> page = bookService.getPage(1, 5);
     }
 
 }

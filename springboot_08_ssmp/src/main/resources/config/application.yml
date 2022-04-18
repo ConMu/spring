@@ -1,5 +1,6 @@
+# config 目录下的配置文件优先级更高，且与resources目录下的配置文件会相互补充
 server:
-  port: 80
+  port: 81
 
 spring:
   datasource:

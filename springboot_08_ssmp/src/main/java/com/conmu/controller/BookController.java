@@ -1,11 +1,13 @@
 package com.conmu.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.conmu.controller.utils.R;
 import com.conmu.domain.Book;
 import com.conmu.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -15,32 +17,51 @@ public class BookController {
     private IBookService iBookService;
 
     @GetMapping
-    public List<Book> getAll() {
-        return iBookService.list();
+    public R getAll() {
+        return new R(true,iBookService.list());
     }
 
     @PostMapping
-    public Boolean save(@RequestBody Book book) {
-        return iBookService.save(book);
+    public R save(@RequestBody Book book) throws IOException {
+        if (book.getName().equals("123")){
+            throw new IOException();
+        }
+        boolean flag = iBookService.save(book);
+        return new R(flag, flag ? "添加成功^_^" : "添加失败-_-!");
     }
 
     @PutMapping
-    public Boolean update(@RequestBody Book book) {
-        return iBookService.modify(book);
+    public R update(@RequestBody Book book) {
+        return new R(iBookService.modify(book));
     }
 
     @DeleteMapping("{id}")
-    public Boolean delete(@PathVariable Integer id) {
-        return iBookService.delete(id);
+    public R delete(@PathVariable Integer id) {
+        return new R(iBookService.delete(id));
     }
 
     @GetMapping("{id}")
-    public Book getById(@PathVariable Integer id) {
-        return iBookService.getById(id);
+    public R getById(@PathVariable Integer id) {
+        return new R(true,iBookService.getById(id));
     }
 
+//    @GetMapping("{currentPage}/{pageSize}")
+//    public R getPage(@PathVariable int currentPage,@PathVariable int pageSize){
+//        IPage<Book> page = iBookService.getPage(currentPage, pageSize);
+//        //如果当前页码值大于总页码值，则重新执行查询操作，将最大页码作为当前页码值
+//        if (currentPage > page.getPages()) {
+//            page = iBookService.getPage((int)page.getPages(), pageSize);
+//        }
+//        return new R(true,page);
+//    }
+
     @GetMapping("{currentPage}/{pageSize}")
-    public IPage<Book> getPage(@PathVariable int currentPage,@PathVariable int pageSize){
-        return iBookService.getPage(currentPage, pageSize);
+    public R getPage(@PathVariable int currentPage,@PathVariable int pageSize,Book book){
+        IPage<Book> page = iBookService.getPage(currentPage, pageSize,book);
+        //如果当前页码值大于总页码值，则重新执行查询操作，将最大页码作为当前页码值
+        if (currentPage > page.getPages()) {
+            page = iBookService.getPage((int)page.getPages(), pageSize,book);
+        }
+        return new R(true,page);
     }
 }
