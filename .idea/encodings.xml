@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/springboot_01_01_quickstart/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_01_02_quickstart/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_01_02_quickstart/src/main/resources" charset="UTF-8" />
@@ -13,6 +13,9 @@
     <file url="file://$PROJECT_DIR$/springboot_06_mybatis_plus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_07_druid/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_08_ssmp/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot_08_ssmp/src/main/java/com/conmu/SSMPApplication.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/application.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_09_config/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
