@@ -1,0 +1,28 @@
+
+# \u5E94\u7528\u73AF\u5883
+# \u516C\u5171\u914D\u7F6E\uFF0C\u4E00\u822C\u653E\u516C\u7528\u7684
+spring:
+  profiles:
+    active: pro
+---
+# \u8BBE\u7F6E\u73AF\u5883
+# \u751F\u4EA7\u73AF\u5883
+spring:
+  profiles: pro
+server:
+  port: 80
+---
+# \u5F00\u53D1\u73AF\u5883
+spring:
+  profiles: dev
+server:
+  port: 81
+
+---
+# \u6D4B\u8BD5\u73AF\u5883
+server:
+  port: 82
+spring:
+  config:
+    activate:
+      on-profile: test
