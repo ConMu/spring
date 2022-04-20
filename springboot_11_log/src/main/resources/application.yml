@@ -1,0 +1,33 @@
+
+server:
+  port: 8082
+
+#debug: true
+
+logging:
+#  level:
+#    root: info
+
+#    com.conmu.controller: debug
+  # 设置分组
+  group:
+    ebank: com.conmu.controller,com.conmu.service
+  level:
+    # 所有包的登记
+    root: info
+    # 设置分组，对某个组设置日志级别
+    com.conmu.controller: debug
+    ebank: warn
+  pattern:
+    # 日志文件名
+#  file:
+#    name: server.log
+    # 设置日志大小与名称格式
+  logback:
+    rollingpolicy:
+      max-file-size: 4KB
+      file-name-pattern: server.%d{yyyy-MM-dd}.%i.log
+#    console: "%d %5p %n"
+#    console: "%d - %m %n"
+
+# 日志文件系统
