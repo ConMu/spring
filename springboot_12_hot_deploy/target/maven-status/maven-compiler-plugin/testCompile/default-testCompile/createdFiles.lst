@@ -1,0 +1,4 @@
+com\conmu\service\BookServiceTestCase.class
+com\conmu\Springboot08SsmpApplicationTests.class
+com\conmu\service\BookServiceTestCase2.class
+com\conmu\dao\BookDaoTestCase.class

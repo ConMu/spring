@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.conmu.dao.BookDaoTestCase
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.447 s - in com.conmu.dao.BookDaoTestCase

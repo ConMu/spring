@@ -1,0 +1,12 @@
+com\conmu\SSMPApplication.class
+com\conmu\controller\BookController.class
+com\conmu\dao\BookDao.class
+com\conmu\controller\BookController2.class
+com\conmu\domain\Book.class
+com\conmu\service\IBookService.class
+com\conmu\service\BookService.class
+com\conmu\controller\utils\R.class
+com\conmu\service\impl\BookServiceImpl.class
+com\conmu\service\impl\BookServiceImpl2.class
+com\conmu\controller\utils\ProjectExceptionAdvice.class
+com\conmu\config\MPConfig.class
