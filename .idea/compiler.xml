@@ -7,17 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot_14_test" />
         <module name="springboot_11_log" />
-        <module name="springboot_09_config" />
+        <module name="springboot_13_configuration" />
+        <module name="springboot_05_mybatis" />
         <module name="springboot_01_02_quickstart" />
+        <module name="springboot_06_mybatis_plus" />
+        <module name="springboot_08_ssmp" />
+        <module name="springboot_01_01_quickstart" />
+        <module name="springboot_10_profiles" />
         <module name="springboot_07_druid" />
         <module name="springboot_04_junit" />
-        <module name="springboot_06_mybatis_plus" />
-        <module name="springboot_10_profiles" />
+        <module name="springboot_12_hot_deploy" />
+        <module name="springboot_09_config" />
         <module name="springboot_02_base_configuration" />
-        <module name="springboot_01_01_quickstart" />
-        <module name="springboot_08_ssmp" />
-        <module name="springboot_05_mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -33,6 +36,9 @@
       <module name="springboot_09_config" target="1.8" />
       <module name="springboot_10_profiles" target="1.8" />
       <module name="springboot_11_log" target="1.8" />
+      <module name="springboot_12_hot_deploy" target="1.8" />
+      <module name="springboot_13_configuration" target="1.8" />
+      <module name="springboot_14_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -44,6 +50,9 @@
       <module name="springboot_09_config" options="-parameters" />
       <module name="springboot_10_profiles" options="-parameters" />
       <module name="springboot_11_log" options="-parameters" />
+      <module name="springboot_12_hot_deploy" options="-parameters" />
+      <module name="springboot_13_configuration" options="-parameters" />
+      <module name="springboot_14_test" options="-parameters" />
     </option>
   </component>
 </project>
