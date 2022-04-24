@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+#spring:
+#  datasource:
+##    druid 不采用druid
+##    url: jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC
+#    # hikari为springboot内置的默认轻量级数据源（DataSource），ps：不能在hikari配置url
+#    hikari:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: root
+#      maximum-pool-size: 50
+#  jdbc:
+#    template:
+#      query-timeout:
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      id-type: auto # 采用自增形式，否则id随机
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #log日志打印
+
+## h2数据库
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
