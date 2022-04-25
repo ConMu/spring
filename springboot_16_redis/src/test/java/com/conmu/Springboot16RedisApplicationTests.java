@@ -10,6 +10,7 @@ import org.springframework.data.redis.core.ValueOperations;
 @SpringBootTest
 class Springboot16RedisApplicationTests {
 	@Autowired
+	//以object 对象 为操作的基本单元，因此操作后在客户端不能查询出来
 	private RedisTemplate redisTemplate;
 
 	@Test
