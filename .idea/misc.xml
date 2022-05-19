@@ -10,19 +10,18 @@
         <option value="$PROJECT_DIR$/springboot_05_mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_06_mybatis_plus/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_07_druid/pom.xml" />
-        <option value="$PROJECT_DIR$/springboot_08_ssmp/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_09_config/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_10_profiles/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_11_log/pom.xml" />
-        <option value="$PROJECT_DIR$/springboot_12_hot_deploy/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_13_configuration/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_14_test/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_15_sql/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_16_redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_17_kafka/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
