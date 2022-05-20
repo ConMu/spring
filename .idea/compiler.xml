@@ -43,7 +43,7 @@
       <module name="springboot_14_test" target="1.8" />
       <module name="springboot_15_sql" target="1.8" />
       <module name="springboot_16_redis" target="1.8" />
-      <module name="springboot_17_kafka" target="8" />
+      <module name="springboot_17_kafka" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
