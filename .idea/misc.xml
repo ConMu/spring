@@ -18,6 +18,8 @@
         <option value="$PROJECT_DIR$/springboot_15_sql/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_16_redis/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_17_kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_18_aop/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_08_ssmp/pom.xml" />
       </list>
     </option>
   </component>

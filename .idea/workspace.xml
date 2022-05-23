@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05eb95f1-03e5-44a5-8673-6af2256ecc8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_44.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_68.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_18_aop/springboot_18_aop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_16_redis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_16_redis/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_16_redis/springboot_16_redis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_16_redis/springboot_16_redis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_16_redis/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_16_redis/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_16_redis/src/test/java/com/conmu/Springboot16RedisApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_16_redis/src/test/java/com/conmu/Springboot16RedisApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_17_kafka/springboot_17_kafka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_17_kafka/springboot_17_kafka.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,9 @@
     </option>
   </component>
   <component name="ProjectId" id="29NLqTMoeAzwyJlCjgJ1D0hNRAG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,7 +64,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/springboot_08_ssmp" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -69,10 +74,10 @@
       <recent name="com.conmu.po" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Springboot16RedisApplicationTests.setObjectByUtil">
-    <configuration name="Springboot17KafkaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot17KafkaApplication" />
-      <module name="springboot_17_kafka" />
+  <component name="RunManager" selected="Application.Springboot18AopApplication">
+    <configuration name="Springboot18AopApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot18AopApplication" />
+      <module name="springboot_18_aop" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.conmu.*" />
@@ -131,12 +136,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Springboot18AopApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_18_aop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.conmu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.conmu" />
+      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot18AopApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Springboot18AopApplication" />
+        <item itemvalue="JUnit.Springboot18AopApplicationTests" />
         <item itemvalue="JUnit.Springboot16RedisApplicationTests.setObjectByUtil" />
         <item itemvalue="JUnit.Springboot16RedisApplicationTests.get" />
         <item itemvalue="JUnit.Springboot16RedisApplicationTests.set" />
-        <item itemvalue="Application.Springboot17KafkaApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -167,9 +188,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_16_redis/src/main/java/com/conmu/util/RedisUtil.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/springboot_18_aop/src/main/java/com/conmu/controller/UserRestController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
