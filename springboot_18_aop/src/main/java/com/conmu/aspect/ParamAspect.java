@@ -1,12 +1,10 @@
-package com.conmu.aop;
+package com.conmu.aspect;
 
 import com.conmu.po.User;
 import com.conmu.response.ResultBody;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.io.UnsupportedEncodingException;
@@ -48,8 +46,17 @@ public class ParamAspect {
         System.out.println("前置通知响应的参数:"+resultBody);
     }
 
+    @Around(value = "doOperation()")
+    public void aroundAdvice(ProceedingJoinPoint jp) throws Throwable {
+        System.out.println("方法调用前的aroundAdvice()方法" + jp.getSignature().getName() + " method");
+        try { jp.proceed(); }
+        finally {}
+        System.out.println("方法调用后的aroundAdvice()方法" + jp.getSignature().getName() + " method");
+    }
 
-    public  String base64EnStr(String str) throws UnsupportedEncodingException {
+
+    public String base64EnStr(String str) throws UnsupportedEncodingException {
+
         return Base64.getEncoder().encodeToString(str.getBytes("UTF-8"));
     }
 
