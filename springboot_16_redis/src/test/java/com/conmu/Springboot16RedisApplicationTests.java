@@ -21,6 +21,8 @@ class Springboot16RedisApplicationTests {
 	private RedisUtil redisUtil;
 
 	private final String BOOK_PREFIX = "book";
+
+	private final String MID_PREFIX = "test";
 	@Test
 	void set() {
 		ValueOperations ops = redisTemplate.opsForValue();
@@ -30,12 +32,19 @@ class Springboot16RedisApplicationTests {
 	@Test
 	void setObjectByUtil() {
 		Book book = new Book();
-		book.setId(1);
-		book.setName("梦回紫金城");
+		book.setId(3);
+		book.setName("大唐荣誉");
 		book.setType("mcc");
-		book.setDescription("this is my dream");
-		redisUtil.set(BOOK_PREFIX, book);
+		book.setDescription("this is 大唐");
+		String prefix = getBookPrefix(book);
+//		redisUtil.set(prefix, book,5);
+		System.out.println(redisUtil.get(prefix));
 	}
+
+	private String getBookPrefix(Book book) {
+		return BOOK_PREFIX + MID_PREFIX + book.getId() + book.getName();
+	}
+
 	@Test
 	void get() {
 		ValueOperations ops = redisTemplate.opsForValue();
