@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/springboot_17_kafka/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_18_aop/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_08_ssmp/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_19_mybatis_generator/pom.xml" />
       </list>
     </option>
   </component>
