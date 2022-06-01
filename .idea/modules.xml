@@ -20,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot_16_redis/springboot_16_redis.iml" filepath="$PROJECT_DIR$/springboot_16_redis/springboot_16_redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_17_kafka/springboot_17_kafka.iml" filepath="$PROJECT_DIR$/springboot_17_kafka/springboot_17_kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_18_aop/springboot_18_aop.iml" filepath="$PROJECT_DIR$/springboot_18_aop/springboot_18_aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_19_mybatis_generator/springboot_19_mybatis_generator.iml" filepath="$PROJECT_DIR$/springboot_19_mybatis_generator/springboot_19_mybatis_generator.iml" />
     </modules>
   </component>
 </project>

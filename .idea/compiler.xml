@@ -19,6 +19,7 @@
         <module name="springboot_01_02_quickstart" />
         <module name="springboot_10_profiles" />
         <module name="springboot_04_junit" />
+        <module name="springboot_19_mybatis_generator" />
         <module name="springboot_01_01_quickstart" />
         <module name="springboot_13_configuration" />
         <module name="springboot_16_redis" />
@@ -46,6 +47,7 @@
       <module name="springboot_16_redis" target="1.8" />
       <module name="springboot_17_kafka" target="8" />
       <module name="springboot_18_aop" target="8" />
+      <module name="springboot_19_mybatis_generator" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -63,6 +65,7 @@
       <module name="springboot_16_redis" options="-parameters" />
       <module name="springboot_17_kafka" options="-parameters" />
       <module name="springboot_18_aop" options="-parameters" />
+      <module name="springboot_19_mybatis_generator" options="-parameters" />
     </option>
   </component>
 </project>

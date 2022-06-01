@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05eb95f1-03e5-44a5-8673-6af2256ecc8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_16_redis/src/test/java/com/conmu/Springboot16RedisApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_16_redis/src/test/java/com/conmu/Springboot16RedisApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_16_redis/target/test-classes/com/conmu/Springboot16RedisApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_16_redis/target/test-classes/com/conmu/Springboot16RedisApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_18_aop/src/main/java/com/conmu/Springboot18AopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_18_aop/src/main/java/com/conmu/Springboot18AopApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_18_aop/src/main/java/com/conmu/aop/ParamAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_18_aop/src/main/java/com/conmu/aspect/ParamAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_18_aop/target/classes/com/conmu/Springboot18AopApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_18_aop/target/classes/com/conmu/Springboot18AopApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_18_aop/target/classes/com/conmu/aop/ParamAspect.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +22,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindBugs-IDEA-Workspace">
-    <toolWindowEditorPreview>false</toolWindowEditorPreview>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +66,20 @@
       <recent name="com.conmu.po" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Springboot16RedisApplicationTests.setObjectByUtil">
+  <component name="RunManager" selected="JUnit.Springboot19MybatisGeneratorApplicationTests.contextLoads">
+    <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.conmu.service.AppService" />
+      <module name="springboot_19_mybatis_generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.conmu.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Springboot18AopApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot18AopApplication" />
       <module name="springboot_18_aop" />
@@ -81,38 +89,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Springboot16RedisApplicationTests.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot_16_redis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.conmu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.conmu" />
-      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot16RedisApplicationTests" />
-      <option name="METHOD_NAME" value="get" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Springboot16RedisApplicationTests.set" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot_16_redis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.conmu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.conmu" />
-      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot16RedisApplicationTests" />
-      <option name="METHOD_NAME" value="set" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,8 +109,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Springboot18AopApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot_18_aop" />
+    <configuration name="Springboot19MybatisGeneratorApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_19_mybatis_generator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.conmu.*" />
@@ -142,19 +118,35 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.conmu" />
-      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot18AopApplicationTests" />
+      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot19MybatisGeneratorApplicationTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springboot19MybatisGeneratorApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_19_mybatis_generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.conmu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.conmu" />
+      <option name="MAIN_CLASS_NAME" value="com.conmu.Springboot19MybatisGeneratorApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Springboot19MybatisGeneratorApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.Springboot19MybatisGeneratorApplicationTests" />
+        <item itemvalue="Application.AppService" />
         <item itemvalue="JUnit.Springboot16RedisApplicationTests.setObjectByUtil" />
         <item itemvalue="Application.Springboot18AopApplication" />
-        <item itemvalue="JUnit.Springboot18AopApplicationTests" />
-        <item itemvalue="JUnit.Springboot16RedisApplicationTests.get" />
-        <item itemvalue="JUnit.Springboot16RedisApplicationTests.set" />
       </list>
     </recent_temporary>
   </component>
@@ -180,16 +172,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_18_aop/src/main/java/com/conmu/controller/UserRestController.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
