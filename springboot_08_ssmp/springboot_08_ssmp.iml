@@ -76,6 +76,8 @@
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-core:3.4.3" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-annotation:3.4.3" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.7" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
@@ -85,10 +87,6 @@
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
-    <orderEntry type="module" module-name="springboot_19_mybatis_generator" />
-    <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.1.4" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.6" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.6" level="project" />
+    <orderEntry type="library" name="Maven: com.conmu:springboot_19_mybatis_generator:0.0.1-SNAPSHOT" level="project" />
   </component>
 </module>

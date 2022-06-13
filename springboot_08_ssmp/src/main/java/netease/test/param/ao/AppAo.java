@@ -38,7 +38,7 @@ public class AppAo implements Serializable {
     /**
      * 是否启用
      */
-    private Short status;
+    private Integer status;
 
     /**
      * 创建时间(s)

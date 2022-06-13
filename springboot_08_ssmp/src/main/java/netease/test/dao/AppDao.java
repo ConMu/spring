@@ -1,9 +1,11 @@
 package netease.test.dao;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
 import netease.test.entity.AppEntity;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * .
@@ -12,7 +14,22 @@ import org.springframework.stereotype.Repository;
  * @date 2022/5/31  21:57
  * @since
  */
-@Repository
 @Mapper
-public interface AppDao extends BaseMapper<AppEntity> {
+public interface AppDao {
+
+    String cachePre = "'voip_acd_app'";
+
+    Long insert(AppEntity entity);
+
+    Long update(AppEntity entity);
+
+    Long deleteByAppId(@Param("appId") String appId);
+
+    List<AppEntity> queryList(@Param("limit") Integer limit, @Param("offset") Integer offset);
+
+    AppEntity queryByAppId (@Param("appId") String appId);
+
+    Long deleteByAppName(@Param("appName") String appName);
+
+    AppEntity queryByAppName(@Param("appName") String appName);
 }

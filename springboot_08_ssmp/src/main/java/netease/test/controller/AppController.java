@@ -1,17 +1,18 @@
 package netease.test.controller;
 
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import lombok.extern.slf4j.Slf4j;
+import netease.test.config.ACDConfig;
 import netease.test.param.ao.AppAo;
 import netease.test.param.bo.AppBo;
-import netease.test.service.AppService;
+import netease.test.servicelocal.AppServiceLocal;
+import netease.test.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.ws.Response;
+import java.util.List;
 
 /**
  * 应用controller
@@ -19,68 +20,75 @@ import javax.xml.ws.Response;
 
 @Slf4j
 @Controller
-@RequestMapping("/acd/apps")
+@RequestMapping(ACDConfig.ACD_URL_PREFIX)
 public class AppController {
+
     @Autowired
-    AppService appService;
+    AppServiceLocal appService;
 
     /**
      * @Description 添加应用
      *
-     * @Param [content]
+     * @Param [appAo]
      * @return com.netease.we.voip.bs.tenant.common.constans.web.Response<java.lang.Void>
      **/
-    @PostMapping
+    @RequestMapping(value = "/apps",method = RequestMethod.POST)
     @ResponseBody
     public Response<Void> createApp(@RequestBody AppAo appAo) {
         appService.createApp(appAo);
-        return null;
+        return Response.success();
     }
 
     /**
      * @Description 编辑应用
      *
-     * @Param [appId]
+     * @Param [appAo]
      * @return com.netease.we.voip.bs.tenant.common.constans.web.Response<java.lang.Void>
      **/
-    @PutMapping
+    @RequestMapping(value = "/apps",method = RequestMethod.PUT)
     @ResponseBody
     public Response<Void> editApp( @RequestBody AppAo appAo) {
-        appService.editAppByAppId(appAo);
-        return null;
+        appService.editApp(appAo);
+        return Response.success();
     }
 
     /**
-     * @Description 删除应用
-     *
-     * @Param [appId]
      * @return com.netease.we.voip.bs.tenant.common.constans.web.Response<java.lang.Void>
+     * @Description 根据appId删除应用
+     * @Param [appId]
      **/
-    @DeleteMapping("{appId}")
+    @RequestMapping(value = "/apps/id/{appId}", method = RequestMethod.DELETE)
     @ResponseBody
-    public Response<Void> deleteApp(@PathVariable String appId) {
+    public Response<Void> deleteAppByAppId(@PathVariable String appId) {
         appService.deleteAppByAppId(appId);
-        return null;
-    }
-
-
-    @GetMapping("{currentPage}/{pageSize}")
-    @ResponseBody
-    public IPage<AppBo> getAppListPage(@PathVariable Integer currentPage, @PathVariable Integer pageSize, @RequestBody AppAo appAo) {
-        IPage<AppBo> appBos = appService.getAppListPage(currentPage, pageSize, appAo);
-        return appBos;
+        return Response.success();
     }
 
     /**
-     * @Description 根据某些属性删除应用
+     * @Description 分页查询所有应用
+     *
+     * @Param [limit, offset, appId]
+     * @return com.netease.we.voip.bs.tenant.common.constans.web.Response<java.util.List<com.netease.we.voip.bs.acd.param.bo.AppBo>>
+     **/
+    @RequestMapping(value = "/apps/list",method = RequestMethod.GET)
+    @ResponseBody
+    public Response<List<AppBo>> getAppList(@RequestParam(required = false) Integer limit,
+                                            @RequestParam(required = false) Integer offset) {
+        List<AppBo> appBos = appService.getAppListPage(limit, offset, null);
+        return Response.success(appBos);
+    }
+
+    /**
+     * @Description 根据appId搜索查询单个应用
      *
      * @Param [appId]
-     * @return com.netease.we.voip.bs.tenant.common.constans.web.Response<java.lang.Void>
+     * @return com.netease.we.voip.bs.tenant.common.constans.web.Response<java.util.List<com.netease.we.voip.bs.acd.param.bo.AppBo>>
      **/
-    @DeleteMapping
+    @RequestMapping(value = "/apps/id/{appId}",method = RequestMethod.GET)
     @ResponseBody
-    public Response<Void> deleteAppByParam(@RequestBody AppAo appAo) {
-        appService.deleteAppByParam(appAo);
-        return null;
+    public Response<List<AppBo>> getAppByAppId (@PathVariable String appId) {
+        List<AppBo> appBos = appService.getAppListPage(null, null, appId);
+        return Response.success(appBos);
     }
+
 }

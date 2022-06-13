@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.test.dao.RouteDao">
+
+  <resultMap type="netease.test.entity.RouteEntity" id="RouteResultMap" >
+    <result column="id" property="id" />
+    <result column="root_node_id" property="rootNodeId" />
+    <result column="node_id" property="nodeId" />
+    <result column="app_id" property="appId" />
+    <result column="node_type" property="nodeType" />
+    <result column="property_identify" property="propertyIdentify" />
+    <result column="property_type" property="propertyIdentify" />
+    <result column="enum_value" property="enumValue" />
+    <result column="queue_id" property="queueId" />
+    <result column="queue_name" property="queueName" />
+    <result column="child_ids" property="childIds" />
+    <result column="db_update_time" property="dbUpdateTime" />
+    <result column="db_create_time" property="dbCreateTime" />
+  </resultMap>
+
+
+  <sql id="RouteColumns">
+    root_node_id, node_id, app_id, node_type, property_name, property_identify, enum_value,
+    queue_id, queue_name, child_ids, db_update_time, db_create_time
+  </sql>
+
+
+  <delete id="deleteByRootNodeIdTrue">
+    DELETE
+    FROM voip_acd_route
+    WHERE root_node_id=#{rootNodeId}
+  </delete>
+
+  <delete id="deleteByNodeId">
+    DELETE
+    FROM voip_acd_route
+    WHERE node_id=#{nodeId}
+  </delete>
+
+  <delete id="deleteAllByAppId">
+    DELETE
+    FROM voip_acd_route
+    WHERE app_id=#{appId}
+  </delete>
+
+  <delete id="deleteInNodeIds">
+    DELETE
+    FROM voip_acd_route
+    WHERE root_node_id=#{rootNodeId}
+    and node_id IN
+    <foreach collection="list" item="needDeleteNodeIds" index="index" open="(" close=")" separator=",">
+      #{needDeleteNodeIds}
+    </foreach>
+  </delete>
+
+  <select id="queryByRootNodeId" resultMap="RouteResultMap">
+    select
+    <include refid="RouteColumns" />
+    from voip_acd_route
+    where root_node_id = #{rootNodeId}
+  </select>
+
+  <select id="queryByAppId" resultMap="RouteResultMap">
+    select
+    <include refid="RouteColumns" />
+    from voip_acd_route
+    where app_id = #{appId}
+  </select>
+
+  <select id="queryByQueueId" resultMap="RouteResultMap">
+    select
+    <include refid="RouteColumns" />
+    from voip_acd_route
+    where queue_id = #{queueId}
+  </select>
+
+  <select id="queryUsedNodeByPropertyName" resultType="netease.test.entity.RouteEntity">
+    SELECT
+    <include refid="RouteColumns" />
+    from voip_acd_route
+    WHERE app_id=#{appId} and property_name=#{propertyName} and root_node_id IN
+    <foreach collection="list" item="rootNodeIds" index="index" open="(" close=")" separator=",">
+      #{rootNodeIds}
+    </foreach>
+  </select>
+
+  <select id="queryAllUsedNode" resultType="netease.test.entity.RouteEntity">
+    SELECT
+    <include refid="RouteColumns" />
+    from voip_acd_route
+    WHERE app_id = #{appId} and role = #{role} and node_type=#{nodeType}
+  </select>
+
+  <insert id="insert" parameterType="netease.test.entity.RouteEntity"
+          useGeneratedKeys="true"
+          keyColumn="id"
+          keyProperty="id"
+  >
+    INSERT INTO voip_acd_route
+    (<include refid="RouteColumns"/>)
+    VALUES
+    (#{appId},#{rootNodeId},#{nodeId},#{nodeType},
+    <choose>
+      <when test="propertyName!=null">#{propertyName}</when>
+      <when test="propertyName==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="propertyIdentify!=null">#{propertyIdentify}</when>
+      <when test="propertyIdentify==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="enumValue!=null">#{enumValue}</when>
+      <when test="enumValue==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="queueId!=null">#{queueId}</when>
+      <when test="queueId==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="queueName!=null">#{queueName}</when>
+      <when test="queueName==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="childIds!=null">#{childIds}</when>
+      <when test="childIds==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="dbUpdateTime!=null">#{dbUpdateTime}</when>
+      <when test="dbUpdateTime==null">''</when>
+    </choose>
+    )
+  </insert>
+</mapper>

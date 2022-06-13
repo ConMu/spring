@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.test.dao.AppDao">
+    
+    <resultMap type="netease.test.entity.AppEntity" id="AppResultMap" >
+        <result column="id" property="id" />
+        <result column="app_id" property="appId" />
+        <result column="app_name" property="appName" />
+        <result column="callback_url" property="callbackUrl" />
+        <result column="status" property="status" />
+        <result column="db_update_time" property="dbUpdateTime" />
+        <result column="db_create_time" property="dbCreateTime" />
+    </resultMap>
+
+
+    <sql id="AppColumns">
+        app_id, app_name, callback_url, status, db_update_time, db_create_time
+    </sql>
+
+
+    <insert id="insert" parameterType="netease.test.entity.AppEntity"
+            keyColumn="id"
+            keyProperty="id"
+            useGeneratedKeys="true"
+    >
+        INSERT INTO voip_acd_app
+        (<include refid="AppColumns"/>)
+        VALUES
+        (#{appId},#{appName},#{callbackUrl},
+        <choose>
+            <when test="status!=null">#{status}</when>
+            <when test="status==null">1</when>
+        </choose>
+        ,
+        <choose>
+            <when test="dbUpdateTime!=null">#{dbUpdateTime}</when>
+            <when test="dbUpdateTime==null">''</when>
+        </choose>
+        ,
+        <choose>
+            <when test="dbCreateTime!=null">#{dbCreateTime}</when>
+            <when test="dbCreateTime==null">''</when>
+        </choose>
+        )
+    </insert>
+
+    <update id="update">
+        update voip_acd_app
+        <set>
+            <if test="appName!=null">`app_name`=#{appName},</if>
+            <if test="callbackUrl!=null">`callback_url`=#{callbackUrl},</if>
+            <if test="status!=null">`status`=#{status},</if>
+            <if test="dbUpdateTime!=null">`db_update_time`=#{dbUpdateTime}</if>
+        </set>
+        WHERE app_id = #{appId}
+    </update>
+
+    <delete id="deleteByAppId">
+        DELETE
+        FROM voip_acd_app
+        WHERE app_id=#{appId}
+    </delete>
+
+    <delete id="deleteByAppName">
+        DELETE
+        FROM voip_acd_app
+        WHERE app_name=#{appName}
+    </delete>
+
+    <select id="queryList" resultMap="AppResultMap">
+        select id,
+        <include refid="AppColumns"/>
+        from voip_acd_app
+        ORDER BY `db_update_time` DESC LIMIT #{limit} OFFSET #{offset};
+    </select>
+
+    <select id="queryByAppId" resultMap="AppResultMap">
+        select id,
+        <include refid="AppColumns"/>
+        from voip_acd_app
+        where app_id = #{appId} limit 1
+    </select>
+
+    <select id="queryByAppName" resultMap="AppResultMap">
+        select id,
+        <include refid="AppColumns"/>
+        from voip_acd_app
+        where app_name = #{appName} limit 1
+    </select>
+
+</mapper>
