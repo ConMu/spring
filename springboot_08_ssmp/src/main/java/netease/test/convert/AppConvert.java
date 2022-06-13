@@ -5,6 +5,7 @@ package netease.test.convert;
 import netease.test.entity.AppEntity;
 import netease.test.param.ao.AppAo;
 import netease.test.param.bo.AppBo;
+import netease.test.utils.TimeUtils;
 import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;
@@ -18,8 +19,8 @@ public class AppConvert {
         }
         AppEntity result = new AppEntity();
         BeanUtils.copyProperties(param, result);
-        result.setDbCreateTime(null);
-        result.setDbUpdateTime(null);
+        result.setDbCreateTime(TimeUtils.getCurrentTimestamp());
+        result.setDbUpdateTime(TimeUtils.getCurrentTimestamp());
         return result;
     }
 

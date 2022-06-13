@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 81
 
 spring:
   datasource:
@@ -8,9 +8,12 @@ spring:
       url: jdbc:mysql://localhost:3306/acd_test?serverTimezone=UTC
       username: root
       password: root
-mybatis-plus:
-  global-config:
-    db-config:
-      id-type: auto # 采用自增形式，否则id随机
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #log日志打印
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      id-type: auto # 采用自增形式，否则id随机
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #log日志打印
+mybatis:
+  type-aliases-package: netease.test.entity
+  mapper-locations: classpath:resources/mapper/*.xml

@@ -1,9 +1,5 @@
 package netease.test.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -17,13 +13,11 @@ import java.sql.Timestamp;
  * @since
  */
 @Data
-@TableName(value = "voip_acd_app")
 public class AppEntity implements Serializable {
 
     /**
      * 自增ID
      */
-//    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
@@ -44,7 +38,7 @@ public class AppEntity implements Serializable {
     /**
      * 是否启用
      */
-    private Short status;
+    private Integer status;
 
     /**
      * 创建时间(s)

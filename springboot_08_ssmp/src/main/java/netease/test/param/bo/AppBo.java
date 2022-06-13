@@ -2,6 +2,7 @@ package netease.test.param.bo;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -12,7 +13,7 @@ import java.sql.Timestamp;
  * @since
  */
 @Data
-public class AppBo {
+public class AppBo implements Serializable {
     /**
      * 自增ID
      */
@@ -36,7 +37,7 @@ public class AppBo {
     /**
      * 是否启用
      */
-    private Short status;
+    private Integer status;
 
     /**
      * 创建时间(s)

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.test.dao.AppRouteDao">
+
+  <resultMap type="netease.test.entity.AppRouteEntity" id="AppRouteResultMap" >
+    <result column="id" property="id" />
+    <result column="root_identify" property="rootIdentify" />
+    <result column="app_id" property="appId" />
+    <result column="root_node_id"  property="rootNodeId" />
+    <result column="role" property="role" />
+    <result column="status" property="status" />
+    <result column="db_update_time" property="dbUpdateTime" />
+    <result column="db_create_time" property="dbCreateTime" />
+  </resultMap>
+
+
+  <sql id="AppRouteColumns">
+    root_identify, app_id, root_node_id, role, status, db_update_time, db_create_time
+  </sql>
+
+  
+  <select id="queryByAppIdAndRole" resultMap="AppRouteResultMap">
+    select id,
+    <include refid="AppRouteColumns"/>
+    from voip_acd_app_route
+    where app_id=#{appId}
+    <set>
+      <if test="role != null">
+        and role=#{role},
+      </if>
+    </set>
+    ORDER BY `db_update_time` DESC LIMIT #{limit} OFFSET #{offset};
+  </select>
+  
+  <select id="queryByAppIdRoleAndRoot" resultMap="AppRouteResultMap">
+    select id,
+    <include refid="AppRouteColumns"/>
+    from voip_acd_app_route
+    where app_id=#{appId} and root_identify=#{rootIdentify} and role=#{role}
+  </select>
+
+  <select id="queryAllRouteByAppIdAndRole" resultType="netease.test.entity.AppRouteEntity">
+    select id,
+    <include refid="AppRouteColumns"/>
+    from voip_acd_app_route
+    where app_id=#{appId} and role=#{role}
+  </select>
+
+  <select id="queryAllByAppId" resultType="netease.test.entity.AppRouteEntity">
+    select id,
+    <include refid="AppRouteColumns"/>
+    FROM voip_acd_app_route
+    WHERE app_id=#{appId}
+  </select>
+
+  <update id="updateByAppIdAndRole">
+    update voip_acd_app_route
+    <set>
+      <if test="rootNodeId!=null">`root_node_id`=#{rootNodeId},</if>
+      <if test="status!=null">`status`=#{status},</if>
+      <if test="dbUpdateTime!=null">`db_update_time`=#{dbUpdateTime}</if>
+    </set>
+    where app_id=#{appId} and root_identify=#{rootIdentify} and role=#{role}
+  </update>
+
+  <delete id="deleteByAppIdAndRoleTrue">
+    DELETE
+    FROM voip_acd_app_route
+    where app_id=#{appId} and root_identify=#{rootIdentify} and role=#{role}
+  </delete>
+
+  <delete id="deleteAllByAppId">
+    DELETE
+    FROM voip_acd_app_route
+    WHERE app_id=#{appId}
+  </delete>
+
+  <insert id="insert" parameterType="netease.test.entity.AppRouteEntity"
+          useGeneratedKeys="true"
+          keyProperty="id"
+          keyColumn="id"
+  >
+    INSERT INTO voip_acd_app_route
+    (<include refid="AppRouteColumns"/>)
+    VALUES
+    (#{appId},
+    <choose>
+      <when test="rootIdentify!=null">#{rootIdentify}</when>
+      <when test="rootIdentify==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="rootNodeId!=null">#{rootNodeId}</when>
+      <when test="rootNodeId==null">NULL</when>
+    </choose>
+    ,
+    <choose>
+      <when test="role!=null">#{role}</when>
+      <when test="role==null">NULL</when>
+    </choose>
+    ,
+    <choose>
+      <when test="status!=null">#{status}</when>
+      <when test="status==null">1</when>
+    </choose>
+    ,
+    <choose>
+      <when test="dbUpdateTime!=null">#{dbUpdateTime}</when>
+      <when test="dbUpdateTime==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="dbCreateTime!=null">#{dbCreateTime}</when>
+      <when test="dbCreateTime==null">''</when>
+    </choose>
+    )
+  </insert>
+
+</mapper>
