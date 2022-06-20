@@ -99,7 +99,7 @@
     INSERT INTO voip_acd_route
     (<include refid="RouteColumns"/>)
     VALUES
-    (#{appId},#{rootNodeId},#{nodeId},#{nodeType},
+    (#{rootNodeId},#{nodeId},#{appId},#{nodeType},
     <choose>
       <when test="propertyName!=null">#{propertyName}</when>
       <when test="propertyName==null">''</when>
@@ -133,6 +133,11 @@
     <choose>
       <when test="dbUpdateTime!=null">#{dbUpdateTime}</when>
       <when test="dbUpdateTime==null">''</when>
+    </choose>
+    ,
+    <choose>
+      <when test="dbCreateTime!=null">#{dbCreateTime}</when>
+      <when test="dbCreateTime==null">''</when>
     </choose>
     )
   </insert>

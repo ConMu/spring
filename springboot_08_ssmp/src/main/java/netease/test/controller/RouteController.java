@@ -29,15 +29,15 @@ public class RouteController {
     RouteServiceLocal routeService;
 
     /**
-     * @Description 查询路由  返回k:rootIdentify v路由树
+     * @Description 查询指定role的路由  返回k:rootIdentify v路由树
      *
      * @Param [appId, role 客服1，客户2]
      * @return com.netease.we.voip.bs.tenant.common.constans.web.Response<com.netease.we.voip.bs.acd.param.bo.RouteBo>
      **/
-    @RequestMapping(value = "/routes/{appId}/{role}", method = RequestMethod.GET)
+    @RequestMapping(value = "/routes/{appId}", method = RequestMethod.GET)
     @ResponseBody
     public Response<Map<String, RouteBo>> getRoute(@PathVariable String appId,
-                                                   @PathVariable Integer role,
+                                                   @RequestParam(required = false) Integer role,
                                                    @RequestParam(required = false) Integer limit,
                                                    @RequestParam(required = false) Integer offset) {
         Map<String,RouteBo> routes = routeService.getRoute(appId, role,limit,offset);
@@ -87,7 +87,7 @@ public class RouteController {
     @ResponseBody
     public Response<Void> editRoute( @RequestParam String appId,
                                      @RequestParam Integer role,
-                                     @PathVariable String rootIdentify,
+                                     @RequestParam String rootIdentify,
                                      @RequestBody RouteAo routeAo) {
         // 1. 所有节点加入到route表 2. 根节点加入到app_route表
         routeService.editRoute(appId,role,rootIdentify,routeAo);

@@ -1,0 +1,9 @@
+
+^
+java:S4488%"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(õÿ‡­
+i
+java:S44885"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(ý×ü˜ýÿÿÿÿ
+`
+java:S4488D"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ø¾äŽ
+^
+java:S4488V"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(ùÏè“

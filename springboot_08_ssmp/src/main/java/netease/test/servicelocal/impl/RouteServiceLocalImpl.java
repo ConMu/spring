@@ -185,7 +185,7 @@ public class RouteServiceLocalImpl implements RouteServiceLocal {
         Map<String,RouteBo> rootsResult = new HashMap<>();
         for (AppRouteBo appRouteBo : appRouteBos) {
             RouteBo rootNode = createTreeByRootNodeId(appRouteBo);
-            rootsResult.put(appRouteBo.getRootIdentify(),rootNode);
+            rootsResult.put("【路由标识 " + appRouteBo.getRootIdentify() + "】-【路由角色 " + RoleEnum.getRole(appRouteBo.getRole()) + "】",rootNode);
         }
         return rootsResult;
     }
@@ -202,18 +202,19 @@ public class RouteServiceLocalImpl implements RouteServiceLocal {
      * @return void
      **/
     private void dfsCreateTree(RouteBo node, HashMap<String, RouteBo> routeBoHashMap) {
-        if (node.getChildIds() != null) {
-            String childs = node.getChildIds();
+        List<RouteBo> childsBo = new ArrayList<>();
+        String childs = node.getChildIds();
+        if (!childs.isEmpty()){
             String [] arrChilds = childs.split(ACDConfig.SPLIT_REGEX);
-            List<RouteBo> childsBo = new ArrayList<>();
             for (String arrChild : arrChilds) {
                 RouteBo child = routeBoHashMap.get(arrChild);
                 if (child != null) {
                     childsBo.add(child);
+                    dfsCreateTree(child,routeBoHashMap);
                 }
             }
-            node.setChildNodes(childsBo);
         }
+        node.setChildNodes(childsBo);
     }
 
     @Override

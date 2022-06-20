@@ -5,69 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05eb95f1-03e5-44a5-8673-6af2256ecc8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_29.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_22_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_4_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_4_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_conmu_springboot_19_mybatis_generator_0_0_1_SNAPSHOT.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/springboot_08_ssmp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/springboot_08_ssmp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/config/MPConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/controller/AppController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/convert/AppConvert.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/dao/AppDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/entity/AppEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/param/ao/AppAo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/param/bo/AppBo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/service/AppService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/service/impl/AppServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/servicelocal/AppServiceLocal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/servicelocal/impl/AppServiceLocalImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/config/MPConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/controller/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/convert/AppConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/convert/AppConvert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/dao/AppDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/dao/AppDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/entity/AppEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/entity/AppEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/param/ao/AppAo.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/param/ao/AppAo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/param/bo/AppBo.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/param/bo/AppBo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/service/AppService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/service/impl/AppServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/servicelocal/AppServiceLocal.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/servicelocal/AppServiceLocal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/servicelocal/impl/AppServiceLocalImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/servicelocal/impl/AppServiceLocalImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_19_mybatis_generator/src/main/java/com/netease/we/voip/bs/acd/Springboot19MybatisGeneratorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_19_mybatis_generator/src/main/java/com/netease/we/voip/bs/acd/Springboot19MybatisGeneratorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_19_mybatis_generator/src/main/java/com/netease/we/voip/bs/acd/dao/AppDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_19_mybatis_generator/src/main/java/com/netease/we/voip/bs/acd/entity/AppEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_19_mybatis_generator/src/main/resources/mapper/AppMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_19_mybatis_generator/src/test/java/com/netease/we/voip/bs/acd/Springboot19MybatisGeneratorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_19_mybatis_generator/src/test/java/com/netease/we/voip/bs/acd/Springboot19MybatisGeneratorApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/check/AppRouteServiceLocalImplCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/check/AppRouteServiceLocalImplCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/controller/RouteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/controller/RouteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/convert/RouteConvert.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/convert/RouteConvert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/servicelocal/impl/RouteServiceLocalImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/servicelocal/impl/RouteServiceLocalImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/utils/TestSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/utils/TestSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/utils/UUIDUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/utils/UUIDUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/mapper/AppRouteMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/mapper/AppRouteMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/mapper/RouteMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/src/main/resources/mapper/RouteMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/mapper/AppRouteMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/mapper/AppRouteMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/mapper/RouteMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/mapper/RouteMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/check/AppRouteServiceLocalImplCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/check/AppRouteServiceLocalImplCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/controller/RouteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/controller/RouteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/convert/RouteConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/convert/RouteConvert.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/servicelocal/impl/RouteServiceLocalImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/servicelocal/impl/RouteServiceLocalImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/utils/TestSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/utils/TestSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/utils/UUIDUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_08_ssmp/target/classes/netease/test/utils/UUIDUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,20 +87,20 @@
       <recent name="com.netease.we.voip.bs.acd" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="netease.test.param" />
       <recent name="netease.test.check" />
       <recent name="netease.test.servicelocal.impl" />
       <recent name="netease.test.exception.code" />
       <recent name="netease.test.enums" />
-      <recent name="netease.test.utils" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Application">
-    <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.conmu.service.AppService" />
-      <module name="springboot_19_mybatis_generator" />
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.Application" />
+      <module name="springboot_08_ssmp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.conmu.service.*" />
+          <option name="PATTERN" value="netease.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netease.Application" />
+    <configuration name="JsonGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.test.utils.JsonGenerator" />
       <module name="springboot_08_ssmp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="netease.*" />
+          <option name="PATTERN" value="netease.test.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,17 +134,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Springboot19MybatisGeneratorApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot_19_mybatis_generator" />
+    <configuration name="TestString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.test.utils.TestString" />
+      <module name="springboot_08_ssmp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.netease.we.voip.bs.acd.*" />
+          <option name="PATTERN" value="netease.test.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.netease.we.voip.bs.acd" />
-      <option name="MAIN_CLASS_NAME" value="com.netease.we.voip.bs.acd.Springboot19MybatisGeneratorApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,10 +166,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.JsonGenerator" />
         <item itemvalue="Application.TestSet" />
+        <item itemvalue="Application.TestString" />
         <item itemvalue="JUnit.Springboot19MybatisGeneratorApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.Springboot19MybatisGeneratorApplicationTests" />
-        <item itemvalue="Application.AppService" />
       </list>
     </recent_temporary>
   </component>
@@ -245,29 +200,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/convert/RouteConvert.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/servicelocal/impl/RouteServiceLocalImpl.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/convert/RouteConvert.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/convert/RouteConvert.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_08_ssmp/src/main/java/netease/test/convert/RouteConvert.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="11" />
+          <line>47</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

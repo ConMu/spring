@@ -128,7 +128,7 @@ public class RouteConvert {
             routeEntities.add(route);
             return uuid;
         }
-        StringBuffer childIdsStr = null;
+        StringBuffer childIdsStr = new StringBuffer();
         // 获取子节点Ao并遍历
         List<RouteAo> childNodes = node.getChildNodes();
         for (RouteAo childNode : childNodes) {
