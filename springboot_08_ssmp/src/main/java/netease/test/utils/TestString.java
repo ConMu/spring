@@ -2,22 +2,16 @@ package netease.test.utils;
 
 import com.alibaba.druid.util.StringUtils;
 
-import java.util.HashSet;
-
 /**
  * @author mucongcong
- * @date 2022/06/10 14:28
+ * @date 2022/06/13 16:36
  * @since
  **/
-public class TestSet {
+public class TestString {
     public static void main(String[] args) {
-        String s = null;
-        test(s);
-        System.out.println(s);
-    }
-
-    private static void test(String s) {
+        String s = "";
+        System.out.println(s == null);
+        System.out.println(s.isEmpty());
         System.out.println(StringUtils.isEmpty(s));
-        s = "a";
     }
 }

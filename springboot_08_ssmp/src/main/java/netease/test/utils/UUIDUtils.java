@@ -1,5 +1,6 @@
 package netease.test.utils;
 
+import java.util.HashMap;
 import java.util.UUID;
 
 /**
@@ -16,4 +17,11 @@ public class UUIDUtils {
     public static String genOriUUID() {
         return UUID.randomUUID().toString();
     }
+
+//    public static void main(String[] args) {
+//        HashMap<String, String> map = new HashMap<>();
+//        map.put("a","a");
+//        map.put("b","b");
+//        Json
+//    }
 }

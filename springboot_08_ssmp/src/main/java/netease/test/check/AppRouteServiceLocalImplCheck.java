@@ -128,9 +128,7 @@ public class AppRouteServiceLocalImplCheck {
                 throw new AppRuntimeException(AppErrorCodeEnums.BAD_REQUEST.getCode(), "appId不存在");
             }
         }
-        if (role == null){
-            throw new AppRuntimeException(AppErrorCodeEnums.BAD_REQUEST.getCode(),"需要指定角色");
-        }else if (!role.equals(RoleEnum.Role_Seat.getKey()) && !role.equals(RoleEnum.Role_Client.getKey())) {
+        if (role != null && !role.equals(RoleEnum.Role_Seat.getKey()) && !role.equals(RoleEnum.Role_Client.getKey())) {
             throw new AppRuntimeException(AppErrorCodeEnums.BAD_REQUEST.getCode(), "角色属性值非法");
         }
     }

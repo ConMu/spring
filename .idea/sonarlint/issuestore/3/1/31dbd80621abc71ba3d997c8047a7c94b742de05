@@ -1,0 +1,7 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Å­Ëİúÿÿÿÿ
+K
+java:S1854"5Remove this useless assignment to local variable "s".(¨ë®ç
+N	java:S106"9Replace this use of System.out or System.err by a logger.(éÖ™
+C
+java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX
