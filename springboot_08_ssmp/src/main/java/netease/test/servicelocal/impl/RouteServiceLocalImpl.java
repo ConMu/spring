@@ -10,8 +10,6 @@ import netease.test.dao.RouteDao;
 import netease.test.entity.RouteEntity;
 import netease.test.enums.RoleEnum;
 import netease.test.enums.RouteNodeEnum;
-import netease.test.exception.AppRuntimeException;
-import netease.test.exception.code.AppErrorCodeEnums;
 import netease.test.param.ao.AppRouteAo;
 import netease.test.param.ao.RouteAo;
 import netease.test.param.bo.AppRouteBo;
@@ -112,15 +110,14 @@ public class RouteServiceLocalImpl implements RouteServiceLocal {
      * @return java.util.List<java.lang.String>
      **/
     public List<String> getQueueIdsList(Map<String, String> attributeMap, String appId, String routeIdentify, Integer role) {
-        List<String> resultQueueIds = new ArrayList<>();
+        Set<String> resultQueueIds = new HashSet<>();
         AppRouteBo appRootNode = appRouteServiceLocal.getSingleRootNode(appId, role, routeIdentify);
         RouteBo rootNode = createTreeByRootNodeId(appRootNode);
         matchAttributeAndGetQueue(attributeMap,rootNode,resultQueueIds);
-        if (resultQueueIds.isEmpty()) {
-            //Todo 返回默认队列，暂时先抛异常
-            throw new AppRuntimeException(AppErrorCodeEnums.BAD_REQUEST.getCode(), "属性匹配不到路由树");
-        }
-        return resultQueueIds;
+//        if (resultQueueIds.isEmpty()) {
+////            throw new AppRuntimeException(AppErrorCodeEnums.BAD_REQUEST.getCode(), "属性匹配不到路由树");
+//        }
+        return new ArrayList<>(resultQueueIds);
     }
 
     /**
@@ -146,13 +143,13 @@ public class RouteServiceLocalImpl implements RouteServiceLocal {
      * @Param [attributeMap, node, resultQueueIds, attrEnum 只在枚举节点的时候才有值：当前map对应的枚举值]
      * @return void
      **/
-    private void matchAttributeAndGetQueue(Map<String, String> attributeMap, RouteBo node, List<String> resultQueueIds) {
+    private void matchAttributeAndGetQueue(Map<String, String> attributeMap, RouteBo node, Set<String> resultQueueIds) {
         if (node.getNodeType().equals(RouteNodeEnum.ENUM_VALUE_NODE.getCode())) {
             //属性：枚举值 节点的情况
             if (attributeMap.containsKey(node.getPropertyName())) {
                 String attrValue = attributeMap.get(node.getPropertyName());
                 //该节点下所有的枚举值
-                List<String> enumValues = Arrays.asList(node.getEnumValue().split(ACDConfig.SPLIT_REGEX));
+                List<String> enumValues = node.getEnumValue();
                 if (attrValue != null && enumValues.contains(attrValue)) {
                     List<RouteBo> childNodes = node.getChildNodes();
                     for (RouteBo childNode : childNodes) {

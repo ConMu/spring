@@ -53,7 +53,7 @@ public class RouteBo implements Serializable {
     /**
      * 枚举数组
      */
-    private String enumValue;
+    private List<String> enumValue;
 
     /**
      * 路由到的队列标识

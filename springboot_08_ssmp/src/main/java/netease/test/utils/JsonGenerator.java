@@ -12,10 +12,32 @@ import java.util.*;
  * @since
  **/
 public class JsonGenerator {
-    private static final String appId = "abcdefg";
+
+//    static String[] role1PropertyNames = new String[]{"坐席属性","坐席渠道"};
+//    static String[] role1Identifys = new String[]{"signerAttr","signerSource"};
+//    static String[] enum1Value = new String[]{"全职座席;普通座席;普通坐席","APP;web;小程序;SDK;h5"};
+//
+//    static String[] role2PropertyNames = new String[]{"业务类型","客户渠道"};
+//    static String[] role2Identifys = new String[]{"businessType","clientSource"};
+//    static String[] enum2Value = new String[]{"车贷;房贷","APP;web;小程序;SDK;h5"};
+//
+//    static String[] queueIds = new String[]{"carLoan", "houseLoan","standbyQueue","testQueue1","testQueue2"};
+//    static String[] queueNames = new String[]{"车贷队列", "房贷队列","备用队列","测试队列","测试队列2"};
+
+    static String[] role1PropertyNames = new String[]{"坐席位置","坐席性别"};
+    static String[] role1Identifys = new String[]{"Location","sex"};
+    static String[] enum1Value = new String[]{"北京;上海;广州;深圳;杭州","男;女"};
+
+    static String[] role2PropertyNames = new String[]{"客户位置","客户性别"};
+    static String[] role2Identifys = new String[]{"Location2","sex2"};
+    static String[] enum2Value = new String[]{"hz;gz;sh;sz;bj","nv;nan"};
+
+    static String[] queueIds = new String[]{"ae8d384d80134a9889174bc22653c419", "9374eda0cbdb473aa3974872b3406396"};
+    static String[] queueNames = new String[]{"queue1", "queue2"};
+
     public static void main(String[] args) {
-//        generateTreeNode();
-        generateSeatParams();
+        generateTreeNode();
+//        generateSeatParams();
     }
 
     private static void generateSeatParams() {
@@ -41,44 +63,58 @@ public class JsonGenerator {
     }
 
     private static void generateTreeNode() {
-        String[] role1PropertyNames = new String[]{"坐席属性","坐席渠道"};
-        String[] role1Identifys = new String[]{"signerAttr","signerSource"};
-        String[] enum1Value = new String[]{"全职座席;普通座席;普通坐席","APP;web;小程序;SDK;h5;TV"};
 
-        String[] role2PropertyNames = new String[]{"业务类型","客户渠道"};
-        String[] role2Identifys = new String[]{"businessType","clientSource"};
-        String[] enum2Value = new String[]{"车贷;房贷","APP;web;小程序;SDK;h5"};
-
-        String[] queueIds = new String[]{"carLoan", "houseLoan","standbyQueue"};
-        String[] queueNames = new String[]{"车贷队列", "房贷队列","备用队列"};
         //根节点
         RouteAo root_role1 = new RouteAo();
-//        root_role1.setNodeType(0);
-        RouteAo node1_1_role1 = setRolePropertyChild(root_role1, role1PropertyNames, role1Identifys, enum1Value, 1, new int[]{0,1});
-        RouteAo node2_1_role1 = setRolePropertyChild(node1_1_role1, role1PropertyNames, role1Identifys, enum1Value, 0, new int[]{0});
-        RouteAo queue1_rol1 = setRoleQueueChild(node2_1_role1, queueIds, queueNames, 1);
-        RouteAo queue2_rol1 = setRoleQueueChild(node2_1_role1, queueIds, queueNames, 0);
-        RouteAo node2_2_role1 = setRolePropertyChild(node1_1_role1, role1PropertyNames, role1Identifys, enum1Value, 0, new int[]{1});
-        RouteAo queue3_rol1 = setRoleQueueChild(node2_2_role1, queueIds, queueNames, 0);
-
-        RouteAo node1_2_role1 = setRolePropertyChild(root_role1, role1PropertyNames, role1Identifys, enum1Value, 1, new int[]{2,3,4});
-        RouteAo queue4_rol1 = setRoleQueueChild(node1_2_role1, queueIds, queueNames, 0);
+//        createFullTree(root_role1);
+        createTestTree(root_role1);
         System.out.println(JSON.toJSONString(root_role1));
+    }
 
-        RouteAo root_role2 = new RouteAo();
-//        root_role2.setNodeType(0);
-        RouteAo node1_1_role2 = setRolePropertyChild(root_role2, role2PropertyNames, role2Identifys, enum2Value, 1, new int[]{0,1});
-        RouteAo node2_1_role2 = setRolePropertyChild(node1_1_role2, role2PropertyNames, role2Identifys, enum2Value, 0, new int[]{0});
-        RouteAo queue1_rol2 = setRoleQueueChild(node2_1_role2, queueIds, queueNames, 0);
-        RouteAo node2_2_role2 = setRolePropertyChild(node1_1_role2, role2PropertyNames, role2Identifys, enum2Value, 0, new int[]{1});
-        RouteAo queue2_rol2 = setRoleQueueChild(node2_2_role2, queueIds, queueNames, 1);
-        RouteAo node1_2_role2 = setRolePropertyChild(root_role2, role2PropertyNames, role2Identifys, enum2Value, 1, new int[]{2,3,4});
-        RouteAo queue3_rol2 = setRoleQueueChild(node1_2_role2, queueIds, queueNames, 0);
-        System.out.println(JSON.toJSONString(root_role2));
+    private static void createTestTree(RouteAo root_role1) {
+        RouteAo node1_1_role1 = setRolePropertyChild(root_role1, 0, new int[]{0});
+        RouteAo node2_1_role1 = setRolePropertyChild(node1_1_role1, 1, new int[]{0});
+            RouteAo queue1_rol1 = setRoleQueueChild(node2_1_role1, 0);
+        RouteAo node2_2_role1 = setRolePropertyChild(node1_1_role1, 1, new int[]{1});
+            RouteAo queue2_rol1 = setRoleQueueChild(node2_2_role1, 1);
+
+        RouteAo node1_2_role1 = setRolePropertyChild(root_role1, 0, new int[]{1,2});
+        RouteAo node2_3_role1 = setRolePropertyChild(node1_2_role1, 1, new int[]{0});
+            RouteAo queue3_rol1 = setRoleQueueChild(node2_3_role1, 0);
+        RouteAo node2_4_role1 = setRolePropertyChild(node1_2_role1, 1, new int[]{1});
+            RouteAo queue4_rol1 = setRoleQueueChild(node2_4_role1, 1);
+
+        RouteAo node1_3_role1 = setRolePropertyChild(root_role1, 0, new int[]{3,4});
+        RouteAo node2_5_role1 = setRolePropertyChild(node1_3_role1, 1, new int[]{0});
+            RouteAo queue5_rol1 = setRoleQueueChild(node2_5_role1, 0);
+        RouteAo node2_6_role1 = setRolePropertyChild(node1_3_role1, 1, new int[]{1});
+            RouteAo queue6_rol1 = setRoleQueueChild(node2_6_role1, 1);
 
     }
 
-    private static RouteAo setRoleQueueChild(RouteAo root, String[] queueIds, String[] queueNames, int index) {
+    private static void createFullTree(RouteAo root_role1) {
+        RouteAo node1_1_role1 = setRolePropertyChild(root_role1, 0, new int[]{0});
+        RouteAo node2_1_role1 = setRolePropertyChild(node1_1_role1, 1, new int[]{0,1});
+        RouteAo queue1_rol1 = setRoleQueueChild(node2_1_role1, 0);
+        RouteAo queue2_rol1 = setRoleQueueChild(node2_1_role1, 1);
+        RouteAo node2_2_role1 = setRolePropertyChild(node1_1_role1, 1, new int[]{2});
+        RouteAo queue3_rol1 = setRoleQueueChild(node2_2_role1, 3);
+        RouteAo node2_3_role1 = setRolePropertyChild(node1_1_role1, 1, new int[]{3,4});
+        RouteAo queue4_rol1 = setRoleQueueChild(node2_3_role1, 4);
+
+        RouteAo node1_2_role1 = setRolePropertyChild(root_role1, 0, new int[]{1});
+        RouteAo node2_4_role1 = setRolePropertyChild(node1_2_role1, 1, new int[]{0});
+        RouteAo queue5_rol1 = setRoleQueueChild(node2_4_role1, 0);
+        RouteAo node2_5_role1 = setRolePropertyChild(node1_2_role1, 1, new int[]{1});
+        RouteAo queue6_rol1 = setRoleQueueChild(node2_5_role1, 1);
+        RouteAo node2_6_role1 = setRolePropertyChild(node1_2_role1, 1, new int[]{2,3});
+        RouteAo queue7_rol1 = setRoleQueueChild(node2_6_role1,  2);
+        RouteAo queue8_rol1 = setRoleQueueChild(node2_6_role1, 3);
+        RouteAo node2_7_role1 = setRolePropertyChild(node1_2_role1, 1, new int[]{4});
+        RouteAo queue9_rol1 = setRoleQueueChild(node2_7_role1, 4);
+    }
+
+    private static RouteAo setRoleQueueChild(RouteAo root,  int index) {
         RouteAo node = new RouteAo();
         node.setQueueId(queueIds[index]);
         node.setQueueName(queueNames[index]);
@@ -93,16 +129,16 @@ public class JsonGenerator {
         return node;
     }
 
-    private static RouteAo setRolePropertyChild(RouteAo root, String[] role1PropertyNames, String[] role1Identifys, String[] enum1Value, int propertyIndex, int[] enumIndex) {
+    private static RouteAo setRolePropertyChild(RouteAo root,  int propertyIndex, int[] enumIndex) {
         RouteAo node = new RouteAo();
         node.setPropertyIdentify(role1Identifys[propertyIndex]);
         node.setPropertyName(role1PropertyNames[propertyIndex]);
-        StringBuffer sb = new StringBuffer();
+        List<String> enumValues = new ArrayList<>();
         String[] split = enum1Value[propertyIndex].split(";");
         for (int index : enumIndex) {
-            sb.append(split[index]).append(";");
+            enumValues.add(split[index]);
         }
-        node.setEnumValue(sb.toString());
+        node.setEnumValue(enumValues);
         List<RouteAo> childNodes = root.getChildNodes();
         if (childNodes == null) {
             List<RouteAo> list = new ArrayList<>();

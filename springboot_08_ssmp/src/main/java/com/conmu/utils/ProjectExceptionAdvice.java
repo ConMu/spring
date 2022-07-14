@@ -1,9 +1,6 @@
-package com.conmu.controller.utils;
+package com.conmu.utils;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 //作为springmvc的异常处理器

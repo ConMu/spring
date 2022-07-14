@@ -31,12 +31,6 @@ public class RouteAo implements Serializable {
     private String nodeId;
 
     /**
-     * 应用id
-     */
-    private String appId;
-
-
-    /**
      * 节点类型 0：根节点，2：[属性名称]&枚举值，3：队列
      */
     private Integer nodeType;
@@ -54,7 +48,7 @@ public class RouteAo implements Serializable {
     /**
      * 枚举数组
      */
-    private String enumValue;
+    private List<String> enumValue;
 
     /**
      * 路由到的队列标识

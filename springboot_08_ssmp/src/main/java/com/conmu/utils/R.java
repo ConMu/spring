@@ -1,4 +1,4 @@
-package com.conmu.controller.utils;
+package com.conmu.utils;
 
 import lombok.Data;
 
