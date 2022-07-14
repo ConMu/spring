@@ -13,4 +13,6 @@ public interface IBookService extends IService<Book> {
 
     IPage<Book> getPage(int currentPage, int pageSize, Book book);
 
+    Boolean toSaveRedis(String appKey ,String appValue,int cap,int time);
+
 }

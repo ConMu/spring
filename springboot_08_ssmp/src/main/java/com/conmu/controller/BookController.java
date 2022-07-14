@@ -1,14 +1,14 @@
 package com.conmu.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.conmu.controller.utils.R;
+import com.conmu.utils.R;
 import com.conmu.domain.Book;
 import com.conmu.service.IBookService;
+import com.conmu.utils.TpsUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/books")
@@ -21,13 +21,26 @@ public class BookController {
         return new R(true,iBookService.list());
     }
 
+//    @PostMapping
+//    public R save(@RequestBody Book book) throws IOException {
+//        if (book.getName().equals("123")){
+//            throw new IOException();
+//        }
+//        boolean flag = iBookService.save(book);
+//        return new R(flag, flag ? "添加成功^_^" : "添加失败-_-!");
+//    }
+
     @PostMapping
-    public R save(@RequestBody Book book) throws IOException {
-        if (book.getName().equals("123")){
-            throw new IOException();
-        }
-        boolean flag = iBookService.save(book);
-        return new R(flag, flag ? "添加成功^_^" : "添加失败-_-!");
+    public R test(HttpServletRequest request, @RequestParam String appKey, @RequestParam String appValue) {
+//        System.out.println(appKey);
+//        System.out.println(appValue);
+//        System.out.println(request.getRequestURL());
+//        TpsUtil tpsUtil = new TpsUtil();
+//        Object object = tpsUtil.getTpsPermission(appKey, appValue, 2, 5);
+//        System.out.println(object);
+
+        iBookService.toSaveRedis(appKey,appValue,5,10);
+        return new R(true);
     }
 
     @PutMapping
