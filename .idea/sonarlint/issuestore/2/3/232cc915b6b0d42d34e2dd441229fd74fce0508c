@@ -1,0 +1,44 @@
+
+P
+java:S1141z"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+D
+java:S1604­"(Make this anonymous inner class a lambda(‘‘ùëıÿÿÿÿ
+w
+java:S1104"\Make sSLSocketFactory a static final constant or non-public and provide accessors if needed.(ìÏØÍıÿÿÿÿ
+n
+java:S1104"XMake trustManager a static final constant or non-public and provide accessors if needed.(êÖáô
+u
+java:S1104™"^Make UnSafeTrustManager a static final constant or non-public and provide accessors if needed.(ª­ÍÏ
+~
+java:S1104­"bMake UnSafeHostnameVerifier a static final constant or non-public and provide accessors if needed.(‘‘ùëıÿÿÿÿ
+O
+java:S1444™"8Make this "public static UnSafeTrustManager" field final(ª­ÍÏ
+X
+java:S1444­"<Make this "public static UnSafeHostnameVerifier" field final(‘‘ùëıÿÿÿÿ
+t
+java:S3008™"]Rename this field "UnSafeTrustManager" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ª­ÍÏ
+}
+java:S3008­"aRename this field "UnSafeHostnameVerifier" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘‘ùëıÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Õ­¯ıÿÿÿÿ
+_
+java:S2147W"DCombine this catch with the one at line 85, which has the same body.(üû’äúÿÿÿÿ
+;
+java:S1168^"&Return an empty array instead of null.(Â¼W
+Q	java:S125f"<This block of commented-out lines of code should be removed.(ğãÊÜ
+<
+java:S1168i"&Return an empty array instead of null.(¥¹ï
+A
+java:S1168m"&Return an empty array instead of null.(‹õíşÿÿÿÿ
+=
+java:S1168‰"&Return an empty array instead of null.(¥¹ï
+˜
+java:S1186›"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ú¥È¢
+
+java:S1186Ÿ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÉÂµ°øÿÿÿÿ
+W
+java:S4830›"@Enable server certificate validation on this SSL/TLS connection.(Ú¥È¢
+\
+java:S4830Ÿ"@Enable server certificate validation on this SSL/TLS connection.(ÉÂµ°øÿÿÿÿ
+V
+java:S5527°"?Enable server hostname verification on this SSL/TLS connection.(§¼Éç
