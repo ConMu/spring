@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.smstest.mapper.NimSmsReportMapper">
+
+    <resultMap id="NimSmsReportMap" type="netease.smstest.domain.NimSmsReport" autoMapping="true">
+        <result column="id" property="id" />
+        <result column="nimreport" property="nimReport" />
+        <result column="nimreason" property="nimReason" />
+        <result column="createtime" property="createTime" />
+        <result column="updatetime" property="updateTime" />
+    </resultMap>
+
+
+    <sql id="NimSmsReportColumns">
+        nimreport, nimreason, createtime, updatetime
+    </sql>
+
+
+    <insert id="insert" parameterType="netease.smstest.domain.NimSmsReport"
+            keyColumn="id"
+            keyProperty="id"
+            useGeneratedKeys="true"
+    >
+        INSERT INTO nim_sms_report
+        (<include refid="NimSmsReportColumns"/>)
+        VALUES
+        (#{nimReport},#{nimReason},
+        <choose>
+            <when test="createTime!=null">#{createTime}</when>
+            <when test="createTime==null">''</when>
+        </choose>
+        ,
+        <choose>
+            <when test="updateTime!=null">#{updateTime}</when>
+            <when test="updateTime==null">''</when>
+        </choose>
+        )
+    </insert>
+
+    <update id="update">
+        update nim_sms_report
+        <set>
+            <if test="nimReason!=null">`nimreason`=#{nimReason}</if>
+        </set>
+        WHERE nimreport = #{nimReport}
+    </update>
+
+    <delete id="deleteByNimReport">
+        delete from nim_sms_report
+        where nimreport = #{nimReport}
+    </delete>
+
+    <select id="selectByNimReport" resultMap="NimSmsReportMap">
+        select
+        <include refid="NimSmsReportColumns" />
+        from nim_sms_report
+        where nimreport = #{nimReport} limit 1
+    </select>
+
+    <select id="selectAll" resultMap="NimSmsReportMap">
+        select
+        <include refid="NimSmsReportColumns" />
+        from nim_sms_report
+        order by createtime desc limit #{limit} offset #{offset};
+    </select>
+
+</mapper>

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="netease.test.dao.AppDao">
     
-    <resultMap type="netease.test.entity.AppEntity" id="AppResultMap" >
+    <resultMap type="netease.acdtest.entity.AppEntity" id="AppResultMap" >
         <result column="id" property="id" />
         <result column="app_id" property="appId" />
         <result column="app_name" property="appName" />
@@ -18,7 +18,7 @@
     </sql>
 
 
-    <insert id="insert" parameterType="netease.test.entity.AppEntity"
+    <insert id="insert" parameterType="netease.acdtest.entity.AppEntity"
             keyColumn="id"
             keyProperty="id"
             useGeneratedKeys="true"

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.smstest.mapper.ChannelProviderMapper">
+
+    <resultMap id="ChannelProviderMap" type="netease.smstest.domain.ChannelProvider" autoMapping="true">
+        <result column="providerid" property="providerId" />
+        <result column="providername" property="providerName" />
+        <result column="description" property="description" />
+        <result column="createtime" property="createTime" />
+        <result column="updatetime" property="updateTime" />
+    </resultMap>
+
+
+    <sql id="ChannelProviderColumns">
+        providerid, providername, description, createtime, updatetime
+    </sql>
+
+
+    <insert id="insert" parameterType="netease.smstest.domain.ChannelProvider">
+        INSERT INTO nim_sms_provider
+        (<include refid="ChannelProviderColumns"/>)
+        VALUES
+        (#{providerId},#{providerName},#{description},
+        <choose>
+            <when test="createTime!=null">#{createTime}</when>
+            <when test="createTime==null">''</when>
+        </choose>
+        ,
+        <choose>
+            <when test="updateTime!=null">#{updateTime}</when>
+            <when test="updateTime==null">''</when>
+        </choose>
+        )
+    </insert>
+
+    <update id="update">
+        update nim_sms_provider
+        <set>
+            <if test="providerName!=null">`providername`=#{providerName},</if>
+            <if test="description!=null">`description`=#{description}</if>
+        </set>
+        WHERE providerid = #{providerId}
+    </update>
+
+    <delete id="delete">
+        delete from nim_sms_provider
+        where providerid = #{providerId};
+    </delete>
+
+    <select id="selectByProviderId" resultType="netease.smstest.domain.ChannelProvider">
+        select
+        *
+        from nim_sms_provider
+        where providerid = #{providerId} limit 1
+    </select>
+
+    <select id="selectAll" resultMap="ChannelProviderMap">
+        select
+        *
+        from nim_sms_provider
+        order by createtime desc limit #{limit} offset #{offset};
+    </select>
+
+    <select id="selectByProviderName" resultType="netease.smstest.domain.ChannelProvider">
+        select
+        *
+        from nim_sms_provider
+        where providername = #{providerName} limit 1
+    </select>
+
+</mapper>

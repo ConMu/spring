@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.smstest.mapper.NimSmsProviderReportMapper">
+
+    <resultMap id="NimSmsProviderReportMap" type="netease.smstest.domain.NimSmsProviderReport" autoMapping="true">
+        <result column="id" property="id" />
+        <result column="providerid" property="providerId" />
+        <result column="report" property="report" />
+        <result column="reason" property="reason" />
+        <result column="nimreport" property="nimReport" />
+        <result column="createtime" property="createTime" />
+        <result column="updatetime" property="updateTime" />
+    </resultMap>
+
+
+    <sql id="NimSmsProviderReportColumns">
+        providerid, report, reason, nimreport, createtime, updatetime
+    </sql>
+
+
+    <insert id="insert" parameterType="netease.smstest.domain.NimSmsProviderReport"
+            keyColumn="id"
+            keyProperty="id"
+            useGeneratedKeys="true"
+    >
+        INSERT INTO nim_sms_provider_report
+        (<include refid="NimSmsProviderReportColumns"/>)
+        VALUES
+        (#{providerId},#{report},#{reason},#{nimReport},
+        <choose>
+            <when test="createTime!=null">#{createTime}</when>
+            <when test="createTime==null">''</when>
+        </choose>
+        ,
+        <choose>
+            <when test="updateTime!=null">#{updateTime}</when>
+            <when test="updateTime==null">''</when>
+        </choose>
+        )
+    </insert>
+
+    <update id="update">
+        update nim_sms_provider_report
+        <set>
+            <if test="reason!=null">`reason`=#{reason},</if>
+            <if test="nimReport!=null">`nimreport`=#{nimReport},</if>
+            <if test="updateTime!=null">`updatetime`=#{updateTime}</if>
+        </set>
+        WHERE providerid = #{providerId} and report = #{report}
+    </update>
+
+    <delete id="delete">
+        delete from nim_sms_provider_report
+        where providerid = #{providerId} and report = #{report}
+    </delete>
+
+    <select id="selectByProviderIdAndReport" resultType="netease.smstest.domain.NimSmsProviderReport">
+        select id,
+        <include refid="NimSmsProviderReportColumns" />
+        from nim_sms_provider_report
+        where providerid = #{providerId} and report = #{report} limit 1
+    </select>
+
+    <select id="selectByProviderId" resultMap="NimSmsProviderReportMap">
+        select
+        <include refid="NimSmsProviderReportColumns" />
+        from nim_sms_provider_report
+        where providerid = #{providerId} order by createtime desc limit #{limit} offset #{offset};
+    </select>
+
+    <select id="selectByNimReport" resultMap="NimSmsProviderReportMap">
+        select
+        <include refid="NimSmsProviderReportColumns" />
+        from nim_sms_provider_report
+        where nimreport = #{nimReport} order by createtime desc limit #{limit} offset #{offset};
+    </select>
+
+
+</mapper>

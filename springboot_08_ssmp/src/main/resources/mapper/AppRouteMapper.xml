@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="netease.test.dao.AppRouteDao">
 
-  <resultMap type="netease.test.entity.AppRouteEntity" id="AppRouteResultMap" >
+  <resultMap type="netease.acdtest.entity.AppRouteEntity" id="AppRouteResultMap" >
     <result column="id" property="id" />
     <result column="root_identify" property="rootIdentify" />
     <result column="app_id" property="appId" />
@@ -37,14 +37,14 @@
     where app_id=#{appId} and root_identify=#{rootIdentify} and role=#{role}
   </select>
 
-  <select id="queryAllRouteByAppIdAndRole" resultType="netease.test.entity.AppRouteEntity">
+  <select id="queryAllRouteByAppIdAndRole" resultType="netease.acdtest.entity.AppRouteEntity">
     select id,
     <include refid="AppRouteColumns"/>
     from voip_acd_app_route
     where app_id=#{appId} and role=#{role}
   </select>
 
-  <select id="queryAllByAppId" resultType="netease.test.entity.AppRouteEntity">
+  <select id="queryAllByAppId" resultType="netease.acdtest.entity.AppRouteEntity">
     select id,
     <include refid="AppRouteColumns"/>
     FROM voip_acd_app_route
@@ -73,7 +73,7 @@
     WHERE app_id=#{appId}
   </delete>
 
-  <insert id="insert" parameterType="netease.test.entity.AppRouteEntity"
+  <insert id="insert" parameterType="netease.acdtest.entity.AppRouteEntity"
           useGeneratedKeys="true"
           keyProperty="id"
           keyColumn="id"

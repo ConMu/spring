@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="netease.test.dao.RouteDao">
 
-  <resultMap type="netease.test.entity.RouteEntity" id="RouteResultMap" >
+  <resultMap type="netease.acdtest.entity.RouteEntity" id="RouteResultMap" >
     <result column="id" property="id" />
     <result column="root_node_id" property="rootNodeId" />
     <result column="node_id" property="nodeId" />
@@ -74,7 +74,7 @@
     where queue_id = #{queueId}
   </select>
 
-  <select id="queryUsedNodeByPropertyName" resultType="netease.test.entity.RouteEntity">
+  <select id="queryUsedNodeByPropertyName" resultType="netease.acdtest.entity.RouteEntity">
     SELECT
     <include refid="RouteColumns" />
     from voip_acd_route
@@ -84,14 +84,14 @@
     </foreach>
   </select>
 
-  <select id="queryAllUsedNode" resultType="netease.test.entity.RouteEntity">
+  <select id="queryAllUsedNode" resultType="netease.acdtest.entity.RouteEntity">
     SELECT
     <include refid="RouteColumns" />
     from voip_acd_route
     WHERE app_id = #{appId} and role = #{role} and node_type=#{nodeType}
   </select>
 
-  <insert id="insert" parameterType="netease.test.entity.RouteEntity"
+  <insert id="insert" parameterType="netease.acdtest.entity.RouteEntity"
           useGeneratedKeys="true"
           keyColumn="id"
           keyProperty="id"

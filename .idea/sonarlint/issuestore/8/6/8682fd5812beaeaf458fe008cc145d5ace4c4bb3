@@ -1,0 +1,19 @@
+
+y
+java:S14889"^Immediately return this expression instead of assigning it to the temporary variable "result".(‡‰şÿÿÿÿ
+H
+java:S3985@"-Remove this unused private "TpsParams" class.(ÅçÀŸıÿÿÿÿ
+n
+java:S1128"XRemove this unused import 'com.alibaba.fastjson.support.spring.FastJsonRedisSerializer'.(×Ï÷
+^
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş
+e
+java:S1128"JRemove this unused import 'org.springframework.core.io.ClassPathResource'.(İ¹º§ıÿÿÿÿ
+x
+java:S1128"]Remove this unused import 'org.springframework.data.redis.connection.RedisConnectionFactory'.(¬ÜôÍúÿÿÿÿ
+r
+java:S1128"\Remove this unused import 'org.springframework.data.redis.serializer.StringRedisSerializer'.(íâè»
+m
+java:S1128"WRemove this unused import 'org.springframework.scripting.support.ResourceScriptSource'.(ê¸½•
+Y
+java:S1128"CRemove this unused import 'org.springframework.stereotype.Service'.(¼º¡Ú

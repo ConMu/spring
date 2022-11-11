@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.smstest.mapper.ChannelProviderRelationshipMapper">
+
+    <resultMap id="ChannelProviderRelationshipMap" type="netease.smstest.domain.ChannelProviderRelationship" autoMapping="true">
+        <result column="id" property="id" />
+        <result column="providerid" property="providerId" />
+        <result column="channelid" property="channelId" />
+        <result column="createtime" property="createTime" />
+        <result column="updatetime" property="updateTime" />
+    </resultMap>
+
+
+    <sql id="ChannelProviderRelationshipColumns">
+        providerid, channelid, createtime, updatetime
+    </sql>
+
+
+    <insert id="insert" parameterType="netease.smstest.domain.ChannelProviderRelationship"
+            keyColumn="id"
+            keyProperty="id"
+            useGeneratedKeys="true"
+    >
+        INSERT INTO nim_sms_channel_provider_relationship
+        (<include refid="ChannelProviderRelationshipColumns"/>)
+        VALUES
+        (#{providerId},#{channelId},
+        <choose>
+            <when test="createTime!=null">#{createTime}</when>
+            <when test="createTime==null">''</when>
+        </choose>
+        ,
+        <choose>
+            <when test="updateTime!=null">#{updateTime}</when>
+            <when test="updateTime==null">''</when>
+        </choose>
+        )
+    </insert>
+
+    <update id="update">
+        update nim_sms_channel_provider_relationship
+        <set>
+            <if test="providerId!=null">`providerid`=#{providerId},</if>
+            <if test="updateTime!=null">`updatetime`=#{updateTime}</if>
+        </set>
+        WHERE channelid = #{channelId}
+    </update>
+
+    <delete id="delete">
+        delete
+        from nim_sms_channel_provider_relationship
+        where channelid = #{channelId}
+    </delete>
+
+    <select id="selectByProviderId" resultMap="ChannelProviderRelationshipMap">
+        select
+        <include refid="ChannelProviderRelationshipColumns" />
+        from nim_sms_channel_provider_relationship
+        where providerid = #{providerId} ;
+    </select>
+
+    <select id="selectAll" resultMap="ChannelProviderRelationshipMap">
+        select
+        <include refid="ChannelProviderRelationshipColumns" />
+        from nim_sms_channel_provider_relationship
+        order by createtime desc limit #{limit} offset #{offset};
+    </select>
+
+    <select id="selectByChannelid" resultType="netease.smstest.domain.ChannelProviderRelationship">
+        select
+        <include refid="ChannelProviderRelationshipColumns" />
+        from nim_sms_channel_provider_relationship
+        where channelid = #{channelId} limit 1
+    </select>
+
+</mapper>

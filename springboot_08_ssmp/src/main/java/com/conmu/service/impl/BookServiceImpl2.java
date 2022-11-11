@@ -8,18 +8,15 @@ import com.conmu.dao.BookDao;
 import com.conmu.domain.Book;
 import com.conmu.service.IBookService;
 import com.conmu.utils.RedisUtil;
-import netease.test.utils.UUIDUtils;
+import netease.acdtest.utils.UUIDUtils;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 
 @Service

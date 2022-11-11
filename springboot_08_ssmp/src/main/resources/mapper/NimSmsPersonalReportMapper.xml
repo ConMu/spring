@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="netease.smstest.mapper.NimSmsPersonalReportMapper">
+
+    <resultMap id="NimSmsPersonalReportMap" type="netease.smstest.domain.NimSmsPersonalReport" autoMapping="true">
+        <result column="id" property="id" />
+        <result column="appid" property="appId" />
+        <result column="nimreport" property="nimReport" />
+        <result column="personalreport" property="personalReport" />
+        <result column="personalreason" property="personalReason" />
+        <result column="createtime" property="createTime" />
+        <result column="updatetime" property="updateTime" />
+    </resultMap>
+
+
+    <sql id="NimSmsPersonalReportColumns">
+        appid, nimreport, personalreport, personalreason, createtime, updatetime
+    </sql>
+
+
+    <insert id="insert" parameterType="netease.smstest.domain.NimSmsPersonalReport"
+            keyColumn="id"
+            keyProperty="id"
+            useGeneratedKeys="true"
+    >
+        INSERT INTO nim_sms_personal_report
+        (<include refid="NimSmsPersonalReportColumns"/>)
+        VALUES
+        (#{appId},#{nimReport},#{personalReport},#{personalReason},
+        <choose>
+            <when test="createTime!=null">#{createTime}</when>
+            <when test="createTime==null">''</when>
+        </choose>
+        ,
+        <choose>
+            <when test="updateTime!=null">#{updateTime}</when>
+            <when test="updateTime==null">''</when>
+        </choose>
+        )
+    </insert>
+
+    <update id="update">
+        update nim_sms_personal_report
+        <set>
+            <if test="nimReport!=null">`nimreport`=#{nimReport},</if>
+            <if test="personalReason!=null">`personalreason`=#{personalReason}</if>
+        </set>
+        WHERE appid = #{appId} and personalreport = #{personalReport}
+    </update>
+
+    <delete id="delete">
+        delete from nim_sms_personal_report
+        where appid = #{appId} and nimReport = #{nimReport};
+    </delete>
+
+    <select id="selectAll" resultMap="NimSmsPersonalReportMap">
+        select * from nim_sms_personal_report
+        where appid = #{appId} order by createtime desc limit #{limit} offset #{offset};
+    </select>
+
+    <select id="selectByAppidAndNimReport" resultType="netease.smstest.domain.NimSmsPersonalReport">
+        select
+        <include refid="NimSmsPersonalReportColumns" />
+        from nim_sms_personal_report
+        where appid = #{appId} and nimreport = #{nimReport} limit 1
+    </select>
+
+    <select id="selectByAppidAndPersonalReport"
+            resultType="netease.smstest.domain.NimSmsPersonalReport">
+        select id,
+        <include refid="NimSmsPersonalReportColumns" />
+        from nim_sms_personal_report
+        where appid = #{appId} and personalreport = #{personalReport} limit 1
+    </select>
+
+    <select id="selectByNimReport" resultMap="NimSmsPersonalReportMap">
+        select
+        <include refid="NimSmsPersonalReportColumns" />
+        from nim_sms_personal_report
+        where nimreport = #{nimReport} order by createtime desc limit #{limit} offset #{offset};
+    </select>
+
+
+</mapper>
